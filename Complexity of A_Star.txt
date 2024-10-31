@@ -1,0 +1,38 @@
+Complexity Analysis of A* Algorithm
+
+
+1. Introduction
+
+This document provides a comprehensive analysis of the complexity of the A* algorithm implementation provided. The A* algorithm is a popular search algorithm used for finding the shortest path between two nodes in a graph. The complexity analysis includes both time complexity and space complexity.
+
+
+2. A* Algorithm Implementation
+
+The implemented A* algorithm takes a graph, a starting node, and a goal node as input and returns the shortest path from the start node to the goal node, along with the corresponding distance. The algorithm uses a heuristic function to estimate the cost of reaching the goal from each node and combines it with the actual cost from the start node to calculate the priority for exploring nodes.
+
+
+3. Time Complexity
+
+The time complexity of the A* algorithm depends on the characteristics of the graph and the heuristic function used. In the provided implementation, the time complexity can be analyzed as follows:
+
+Initialization: The algorithm initializes dictionaries to store distances, visited nodes, and parent nodes, which takes O(V) time, where V is the number of nodes in the graph.
+
+Main Loop: The main loop of the algorithm iterates until all nodes are visited or the goal node is reached. In each iteration, the algorithm finds the node with the lowest distance that has not been visited, which takes O(V) time. It then updates the distances of neighboring nodes, which takes O(E) time, where E is the number of edges in the graph.
+
+Total Time Complexity: Considering the worst-case scenario where all nodes and edges need to be explored, the overall time complexity of the A* algorithm implementation is O((V + E) log V), assuming a binary heap or a similar priority queue is used for efficient node selection.
+
+
+4. Space Complexity
+
+The space complexity of the A* algorithm implementation can be analyzed as follows:
+
+Dictionaries: The algorithm uses dictionaries to store distances, visited nodes, and parent nodes for each node in the graph. The space required for these dictionaries is O(V), where V is the number of nodes in the graph.
+
+Path Storage: The algorithm reconstructs the optimal path from the start node to the goal node and stores it in a list. The space required for storing the path is O(V), where V is the number of nodes in the path.
+
+Total Space Complexity: Therefore, the overall space complexity of the A* algorithm implementation is O(V), assuming the space required for the graph representation is negligible compared to the other data structures used.
+
+5. Conclusion
+The A* algorithm implementation provided demonstrates a time complexity of O((V + E) log V) and a space complexity of O(V), where V is the number of nodes in the graph and E is the number of edges. The complexity analysis provides insights into the efficiency of the algorithm and its resource requirements.
+
+Note: The complexity analysis provided in this document assumes the correctness of the implemented A* algorithm and the efficiency of the underlying data structures used. It is recommended to perform further testing and verification to validate the actual performance of the algorithm.
